@@ -1,0 +1,73 @@
+.body{
+    display: grid;
+    height: 100vh;
+    gap:10px;
+    grid-template-areas: 
+    "header"
+    "menu1"
+    "aside"
+    "contenido"
+    "footer";
+    background-image: url(./imges/hermoso-tiro-flores-rojas-cerca-arboles-verdes-montanas-boscosas-distancia_181624-8440.webp);
+    background-position: center center;
+    background-size: cover;
+}
+.body > *{
+    background-color: rgba(243, 243, 243, 0.073);
+    /* border:3px solid rgba(255, 255, 255, 0.576); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   border-bottom-left-radius: 10px;
+   border-top-right-radius: 10px;
+   -webkit-backdrop-filter: blur(5px);
+   backdrop-filter: blur(5º   1º px);
+}
+
+header{
+    grid-area: header;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: blueviolet !important;
+}
+nav{
+    grid-area: menu1;
+}
+aside{
+    grid-area: aside;
+    width: auto;
+}
+.contenido{
+    grid-area: contenido;
+    
+}
+footer{
+    grid-area: footer;
+}
+@media(min-width:480px) and (max-width:900px){
+    .body{
+        grid-template-areas: 
+        "header header header"
+        "menu1 menu1 menu1"
+        "aside contenido contenido"
+        ". contenido contenido"
+        "footer footer footer";
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows:2fr 1fr 5fr 5fr 1fr ;
+    }
+}
+@media(min-width:901px){
+    .body{
+        grid-template-areas: 
+        "header header header"
+        "menu1 contenido aside"
+        "menu1 contenido aside"
+        "menu1 contenido aside"
+        "footer footer footer";
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows:2fr 1fr 5fr 5fr 1fr ;
+    }
+}
